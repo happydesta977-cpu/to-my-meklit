@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>For Kukaye 💖</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: #fff0f5;
+            color: #4d004d;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+        h1, h2 {
+            text-align: center;
+            color: #ff4d88;
+        }
+        section {
+            padding: 30px 20px;
+            max-width: 800px;
+            margin: auto;
+            font-size: 1.3em; /* consistent font size */
+            opacity: 0;
+        }
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeUp 1.5s forwards;
+        }
+        @keyframes fadeUp {
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .gallery img {
+            width: 280px;
+            margin: 12px;
+            border-radius: 20px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+            transition: transform 0.4s ease;
+        }
+        .gallery img:hover {
+            transform: scale(1.05);
+        }
+        #intro button {
+            padding:15px 25px;
+            font-size:18px;
+            border-radius:20px;
+            border:none;
+            background-color:#ff4d88;
+            color:white;
+            cursor:pointer;
+        }
+        .fade-message {
+            text-align:center;
+            font-size: 1.3em;
+            margin: 50px 20px;
+            opacity:0;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Intro Screen -->
+<div id="intro" style="position:fixed; width:100%; height:100%; background:#fff0f5; display:flex; justify-content:center; align-items:center; flex-direction:column; z-index:999;">
+    <h1 style="font-size:2.5em; text-align:center; word-wrap: break-word; max-width:90%;">For Kukaye 💖</h1>
+    <button onclick="startSite()">Press me… I promise I won’t sing 🎹💖</button>
+</div>
+
+<!-- Audio -->
+<audio id="bg-music" loop>
+    <source src="valentine-song.mp3" type="audio/mp3">
+</audio>
+
+<!-- 1) Personal Intro -->
+<div id="message" class="fade-message">
+    Kukayee… there are many things I could say today, but I want this to be real.
+</div>
+
+<!-- 2) Our Beginning -->
+<section id="beginning">
+    <h2>Our Beginning</h2>
+    <p class="fade-in">
+        We met in church. Not randomly. As young adults ministry leaders, God placed us in the same space, serving Him.  
+        At first, we were just friends, working together, learning from each other, and growing in our roles.  
+        I quickly realized how genuine you are. You listen, you respect, you encourage, and you care about people deeply.  
+        That drew me in — not just your energy and laughter, but your heart. I felt a friendship that was rare and true.  
+        We laughed, we shared moments, we supported each other, and slowly I realized I was captivated by your spirit, your joy, and the way you made even simple moments feel special.  
+        Your playful personality, your kindness, and the way you genuinely cared for everyone made me want to know you more.  
+        Our friendship became the foundation of something beautiful, and eventually, it grew into the relationship that has filled my heart so completely.
+    </p>
+</section>
+
+<!-- 3) The Moment That Meant Everything -->
+<section id="moment">
+    <h2>The Moment That Meant Everything</h2>
+    <p class="fade-in">
+        The day you came back and asked to build again. I don’t think you fully understand what that did to my heart.  
+        It takes strength for a woman to rethink, reflect, and choose again. You didn’t act from pride. You acted from sincerity.  
+        That moment made me respect you even more. It showed me your depth. Your courage. Your heart.  
+        That was one of the most beautiful moments of my life.
+    </p>
+</section>
+
+<!-- 4) Impossible Not to Love You -->
+<section id="love">
+    <h2>Impossible Not to Love You</h2>
+    <p class="fade-in">
+        Kukaye… you are so beautiful inside and out, and I have so many reasons to love you, and at the same time, my love doesn’t even need a reason.  
+        For Valentine’s, here are just a few that make my heart full every single day:
+        <br><br>
+        1️⃣ The way you accepted me before even fully knowing me. You respected me, appreciated me, listened to me, and made me feel completely seen and loved.  
+        That feeling of acceptance changed something in me. It made me realize what real love feels like. I felt safe, valued, and truly cared for.  
+        <br><br>
+        2️⃣ Your heart. You might look strong and independent on the outside, but inside, there is so much beauty, compassion, and tenderness.  
+        Your kindness, your laughter, your playful spirit, your care, your sense of fun — all of it amazes me.  
+        <br><br>
+        3️⃣ How being with you has taught me to love better. You’ve shown me patience, clarity, and a deeper understanding of love.  
+        Your presence challenges me, comforts me, and makes me want to grow. Your courage, your trust, your heart — everything you do inspires me to be the best version of myself.
+        <br><br>
+        Of course… I love your gorgeousness. Your hair, your curves 😳, your smile, your sparkling eyes, your playful sparkle, your body that is perfectly you.  
+        I love your little magical moments, like when you widen your toys and make me laugh. There are countless other reasons I love you, Kukaye, but for Valentine’s today, I wanted to share these few from my heart.
+    </p>
+</section>
+
+<!-- 5) Our Moments Gallery -->
+<section id="gallery">
+    <h2>Our Moments 📸</h2>
+    <div class="gallery fade-in">
+        <img src="pic1.jpg">
+        <img src="pic2.jpg">
+        <img src="pic3.jpg">
+        <img src="pic4.jpg">
+        <img src="pic5.jpg">
+    </div>
+</section>
+
+<!-- 6) You Are My Person -->
+<section id="person">
+    <h2>You Are My Person 💖</h2>
+    <p class="fade-in">
+        I know sometimes you feel like you are not fully understood.  
+        And I want you to know — I am learning. I am growing. I am trying to understand you deeper.  
+        You are patient with me. You stay. You trust.  
+        I see that. And I don’t take it lightly.  
+        You have such a bright future ahead — a strong, talented, and beautiful soul with so much to share with the world.  
+        And through everything, I know one thing clearly — I love you from the bottom of my heart.  
+        Not exaggerated. Not dramatic. Just real.
+    </p>
+</section>
+
+<!-- Interactive Ending -->
+<section id="ending">
+  <h2>Will You Keep Choosing Me? 💖</h2>
+  <p>Tap your answer below:</p>
+  <div style="text-align:center; margin-top:20px;">
+      <button onclick="chooseYes()" style="padding:10px 20px; margin:10px; border:none; border-radius:15px; background:#ff4d88; color:white; font-size:18px; cursor:pointer;">Yes 😍</button>
+      <button onclick="chooseNo()" style="padding:10px 20px; margin:10px; border:none; border-radius:15px; background:#aaaaaa; color:white; font-size:18px; cursor:pointer;">No 😅</button>
+  </div>
+</section>
+
+<script>
+    function startSite() {
+        const audio = document.getElementById("bg-music");
+        audio.play().catch(() => {
+            alert("Tap the screen again to start the music 😉");
+        });
+        document.getElementById("intro").style.display = "none";
+        fadeIn(document.getElementById("message"));
+
+        const sections = [
+            'beginning', 'moment', 'love', 'gallery', 'person', 'ending'
+        ];
+        sections.forEach((id, i) => {
+            setTimeout(()=>fadeIn(document.getElementById(id)), 3000 + i*6000);
+        });
+    }
+
+    function fadeIn(el) {
+        el.style.opacity = 1;
+        const paragraphs = el.querySelectorAll('p, .gallery');
+        paragraphs.forEach((p, index) => {
+            setTimeout(() => {
+                p.classList.add('fade-in');
+            }, index * 500);
+        });
+    }
+
+    // Floating hearts animation
+    setInterval(() => {
+        let heart = document.createElement("div");
+        heart.innerHTML = "💗";
+        heart.style.position = "fixed";
+        heart.style.left = Math.random() * 100 + "vw";
+        heart.style.bottom = "-20px";
+        heart.style.fontSize = (Math.random()*15 + 15) + "px";
+        heart.style.opacity = 0.6;
+        heart.style.animation = "float 6s linear";
+        document.body.appendChild(heart);
+        setTimeout(()=>heart.remove(),6000);
+    }, 1200);
+
+    // Interactive ending
+    function chooseYes() {
+        alert("💖 Yay! I knew it… I love you, Kukaye!");
+    }
+    function chooseNo() {
+        alert("😏 You can’t say no! I won’t give you a choice 😉 But I still love you!");
+    }
+</script>
+
+</body>
+</html>
