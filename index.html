@@ -15,21 +15,15 @@
         h1, h2 {
             text-align: center;
             color: #ff4d88;
+            cursor: default;
         }
+        h2:hover { color: #ff80aa; transition: 0.5s; }
         section {
             padding: 30px 20px;
             max-width: 800px;
             margin: auto;
-            font-size: 1.3em; /* consistent font size */
+            font-size: 1.3em;
             opacity: 0;
-        }
-        .fade-in {
-            opacity: 0;
-            transform: translateY(20px);
-            animation: fadeUp 1.5s forwards;
-        }
-        @keyframes fadeUp {
-            to { opacity: 1; transform: translateY(0); }
         }
         .gallery {
             display: flex;
@@ -61,6 +55,19 @@
             margin: 50px 20px;
             opacity:0;
         }
+        @media (max-width: 600px) {
+            .gallery img { width: 90%; margin:10px; }
+            section { font-size: 1.1em; padding:20px; }
+        }
+        .heart, .sparkle {
+            position: fixed;
+            pointer-events: none;
+            z-index: 999;
+        }
+        @keyframes float {
+            0% { transform: translateY(0); opacity:0.6; }
+            100% { transform: translateY(-120vh); opacity:0; }
+        }
     </style>
 </head>
 <body>
@@ -72,65 +79,56 @@
 </div>
 
 <!-- Audio -->
+<audio id="voice-intro">
+    <source src="kukaye-message.mp3" type="audio/mp3">
+</audio>
 <audio id="bg-music" loop>
     <source src="valentine-song.mp3" type="audio/mp3">
 </audio>
 
 <!-- 1) Personal Intro -->
-<div id="message" class="fade-message">
-    Kukayee… there are many things I could say today, but I want this to be real.
-</div>
+<div id="message" class="fade-message"></div>
 
 <!-- 2) Our Beginning -->
 <section id="beginning">
     <h2>Our Beginning</h2>
-    <p class="fade-in">
-        We met in church. Not randomly. As young adults ministry leaders, God placed us in the same space, serving Him.  
-        At first, we were just friends, working together, learning from each other, and growing in our roles.  
-        I quickly realized how genuine you are. You listen, you respect, you encourage, and you care about people deeply.  
-        That drew me in — not just your energy and laughter, but your heart. I felt a friendship that was rare and true.  
-        We laughed, we shared moments, we supported each other, and slowly I realized I was captivated by your spirit, your joy, and the way you made even simple moments feel special.  
-        Your playful personality, your kindness, and the way you genuinely cared for everyone made me want to know you more.  
-        Our friendship became the foundation of something beautiful, and eventually, it grew into the relationship that has filled my heart so completely.
-    </p>
+    <p data-text="We met in church. Not randomly. As young adults ministry leaders, God placed us in the same space, serving Him."></p>
+    <p data-text="At first, we were just friends, working together, learning from each other, and growing in our roles."></p>
+    <p data-text="I quickly realized how genuine you are. You listen, you respect, you encourage, and you care about people deeply."></p>
+    <p data-text="That drew me in — not just your energy and laughter, but your heart. I felt a friendship that was rare and true."></p>
+    <p data-text="We laughed, we shared moments, we supported each other, and slowly I realized I was captivated by your spirit, your joy, and the way you made even simple moments feel special."></p>
+    <p data-text="Your playful personality, your kindness, and the way you genuinely cared for everyone made me want to know you more."></p>
+    <p data-text="Our friendship became the foundation of something beautiful, and eventually, it grew into the relationship that has filled my heart so completely."></p>
 </section>
 
 <!-- 3) The Moment That Meant Everything -->
 <section id="moment">
     <h2>The Moment That Meant Everything</h2>
-    <p class="fade-in">
-        The day you came back and asked to build again. I don’t think you fully understand what that did to my heart.  
-        It takes strength for a woman to rethink, reflect, and choose again. You didn’t act from pride. You acted from sincerity.  
-        That moment made me respect you even more. It showed me your depth. Your courage. Your heart.  
-        That was one of the most beautiful moments of my life.
-    </p>
+    <p data-text="The day you came back and asked to build again. I don’t think you fully understand what that did to my heart."></p>
+    <p data-text="It takes strength for a woman to rethink, reflect, and choose again. You didn’t act from pride. You acted from sincerity."></p>
+    <p data-text="That moment made me respect you even more. It showed me your depth. Your courage. Your heart."></p>
+    <p data-text="That was one of the most beautiful moments of my life."></p>
 </section>
 
 <!-- 4) Impossible Not to Love You -->
 <section id="love">
     <h2>Impossible Not to Love You</h2>
-    <p class="fade-in">
-        Kukaye… you are so beautiful inside and out, and I have so many reasons to love you, and at the same time, my love doesn’t even need a reason.  
-        For Valentine’s, here are just a few that make my heart full every single day:
-        <br><br>
-        1️⃣ The way you accepted me before even fully knowing me. You respected me, appreciated me, listened to me, and made me feel completely seen and loved.  
-        That feeling of acceptance changed something in me. It made me realize what real love feels like. I felt safe, valued, and truly cared for.  
-        <br><br>
-        2️⃣ Your heart. You might look strong and independent on the outside, but inside, there is so much beauty, compassion, and tenderness.  
-        Your kindness, your laughter, your playful spirit, your care, your sense of fun — all of it amazes me.  
-        <br><br>
-        3️⃣ How being with you has taught me to love better. You’ve shown me patience, clarity, and a deeper understanding of love.  
-        Your presence challenges me, comforts me, and makes me want to grow. Your courage, your trust, your heart — everything you do inspires me to be the best version of myself.
-        <br><br>
-        Of course… I love your gorgeousness. Your hair, your curves 😳, your smile, your sparkling eyes, your playful sparkle, your body that is perfectly you.  
-        I love your little magical moments, like when you widen your toys and make me laugh. There are countless other reasons I love you, Kukaye, but for Valentine’s today, I wanted to share these few from my heart.
-    </p>
+    <p data-text="Kukaye… you are so beautiful inside and out, and I have so many reasons to love you, and at the same time, my love doesn’t even need a reason."></p>
+    <p data-text="For Valentine’s, here are just a few that make my heart full every single day:"></p>
+    <p data-text="1️⃣ The way you accepted me before even fully knowing me. You respected me, appreciated me, listened to me, and made me feel completely seen and loved."></p>
+    <p data-text="That feeling of acceptance changed something in me. It made me realize what real love feels like. I felt safe, valued, and truly cared for."></p>
+    <p data-text="2️⃣ Your heart. You might look strong and independent on the outside, but inside, there is so much beauty, compassion, and tenderness."></p>
+    <p data-text="Your kindness, your laughter, your playful spirit, your care, your sense of fun — all of it amazes me."></p>
+    <p data-text="3️⃣ How being with you has taught me to love better. You’ve shown me patience, clarity, and a deeper understanding of love."></p>
+    <p data-text="Your presence challenges me, comforts me, and makes me want to grow. Your courage, your trust, your heart — everything you do inspires me to be the best version of myself."></p>
+    <p data-text="Of course… I love your gorgeousness. Your hair, your curves 😳, your smile, your sparkling eyes, your playful sparkle, your body that is perfectly you."></p>
+    <p data-text="I love your little magical moments, like when you widen your toys and make me laugh. There are countless other reasons I love you, Kukaye, but for Valentine’s today, I wanted to share these few from my heart."></p>
 </section>
 
 <!-- 5) Our Moments Gallery -->
 <section id="gallery">
     <h2>Our Moments 📸</h2>
-    <div class="gallery fade-in">
+    <div class="gallery">
         <img src="pic1.jpg">
         <img src="pic2.jpg">
         <img src="pic3.jpg">
@@ -142,15 +140,13 @@
 <!-- 6) You Are My Person -->
 <section id="person">
     <h2>You Are My Person 💖</h2>
-    <p class="fade-in">
-        I know sometimes you feel like you are not fully understood.  
-        And I want you to know — I am learning. I am growing. I am trying to understand you deeper.  
-        You are patient with me. You stay. You trust.  
-        I see that. And I don’t take it lightly.  
-        You have such a bright future ahead — a strong, talented, and beautiful soul with so much to share with the world.  
-        And through everything, I know one thing clearly — I love you from the bottom of my heart.  
-        Not exaggerated. Not dramatic. Just real.
-    </p>
+    <p data-text="I know sometimes you feel like you are not fully understood."></p>
+    <p data-text="And I want you to know — I am learning. I am growing. I am trying to understand you deeper."></p>
+    <p data-text="You are patient with me. You stay. You trust."></p>
+    <p data-text="I see that. And I don’t take it lightly."></p>
+    <p data-text="You have such a bright future ahead — a strong, talented, and beautiful soul with so much to share with the world."></p>
+    <p data-text="And through everything, I know one thing clearly — I love you from the bottom of my heart."></p>
+    <p data-text="Not exaggerated. Not dramatic. Just real."></p>
 </section>
 
 <!-- Interactive Ending -->
@@ -164,54 +160,82 @@
 </section>
 
 <script>
+    const voice = document.getElementById("voice-intro");
+    const music = document.getElementById("bg-music");
+
     function startSite() {
-        const audio = document.getElementById("bg-music");
-        audio.play().catch(() => {
-            alert("Tap the screen again to start the music 😉");
-        });
         document.getElementById("intro").style.display = "none";
-        fadeIn(document.getElementById("message"));
+        typeText(document.getElementById("message"), "Kukayee… there are many things I could say today, but I want this to be real.", 50);
 
-        const sections = [
-            'beginning', 'moment', 'love', 'gallery', 'person', 'ending'
-        ];
-        sections.forEach((id, i) => {
-            setTimeout(()=>fadeIn(document.getElementById(id)), 3000 + i*6000);
+        voice.play().catch(()=> alert("Tap the screen again to start your voice 😉"));
+        voice.onended = () => {
+            music.play();
+            showSections();
+        }
+    }
+
+    function showSections() {
+        const sections = ['beginning','moment','love','gallery','person','ending'];
+        sections.forEach((id,i) => {
+            setTimeout(()=> {
+                fadeIn(document.getElementById(id));
+                typeParagraphs(document.getElementById(id));
+            }, i*7000);
         });
     }
 
-    function fadeIn(el) {
-        el.style.opacity = 1;
-        const paragraphs = el.querySelectorAll('p, .gallery');
-        paragraphs.forEach((p, index) => {
-            setTimeout(() => {
-                p.classList.add('fade-in');
-            }, index * 500);
+    function fadeIn(el) { el.style.opacity=1; }
+
+    function typeText(element,text,delay=50) {
+        element.innerHTML="";
+        let i=0;
+        const interval = setInterval(()=>{
+            element.innerHTML += text[i];
+            i++;
+            if(i>=text.length) clearInterval(interval);
+        },delay);
+    }
+
+    function typeParagraphs(section){
+        const paras = section.querySelectorAll('p[data-text]');
+        paras.forEach((p,index)=>{
+            setTimeout(()=> typeText(p,p.getAttribute('data-text'),25), index*1000);
         });
     }
 
-    // Floating hearts animation
-    setInterval(() => {
-        let heart = document.createElement("div");
-        heart.innerHTML = "💗";
-        heart.style.position = "fixed";
-        heart.style.left = Math.random() * 100 + "vw";
-        heart.style.bottom = "-20px";
-        heart.style.fontSize = (Math.random()*15 + 15) + "px";
-        heart.style.opacity = 0.6;
-        heart.style.animation = "float 6s linear";
+    // Floating hearts & sparkles
+    setInterval(()=>{
+        const heart = document.createElement('div');
+        heart.className="heart";
+        heart.innerHTML="💗";
+        heart.style.left=Math.random()*100+"vw";
+        heart.style.bottom="-20px";
+        heart.style.fontSize=(Math.random()*15+15)+"px";
+        heart.style.animation="float 6s linear";
         document.body.appendChild(heart);
         setTimeout(()=>heart.remove(),6000);
-    }, 1200);
 
-    // Interactive ending
-    function chooseYes() {
-        alert("💖 Yay! I knew it… I love you, Kukaye!");
+        const sparkle = document.createElement('div');
+        sparkle.className="sparkle";
+        sparkle.innerHTML="✨";
+        sparkle.style.left=Math.random()*100+"vw";
+        sparkle.style.bottom="-20px";
+        sparkle.style.fontSize=(Math.random()*8+8)+"px";
+        sparkle.style.animation="float 4s linear";
+        document.body.appendChild(sparkle);
+        setTimeout(()=>sparkle.remove(),4000);
+    },1200);
+
+    // Easter egg click
+    document.body.addEventListener('click',()=>alert("💖 Kukaye, you are my everything!"));
+
+    // Ending buttons
+    function chooseYes(){ 
+        alert("😯 Whoa… you actually went for it?! Thank youuuu, seriously 😆❤️"); 
     }
-    function chooseNo() {
-        alert("😏 You can’t say no! I won’t give you a choice 😉 But I still love you!");
+    function chooseNo(){ 
+        alert("😏 You can’t say no! I won’t give you a choice 😉 But I still love you!"); 
     }
 </script>
-
 </body>
 </html>
